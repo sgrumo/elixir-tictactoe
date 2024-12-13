@@ -5,7 +5,7 @@ defmodule Tictactoe.Application do
     [
       {:_,
        [
-         {"/websocket", Tictactoe.SocketRouter, []},
+         {"/ws", Tictactoe.SocketRouter, []},
          {:_, Plug.Cowboy.Handler, {Tictactoe.Router, []}}
        ]}
     ]

@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script>
+            const startWebsocket = () => {
+                const socket = new WebSocket("ws://localhost:3000/ws");
+
+                socket.onopen = (event) => {
+                    console.log("Connection established", event);
+
+                    socket.send("AIUTO");
+                };
+
+                socket.onmessage = (event) => {
+                    console.log(event.data);
+                };
+
+                socket.onerror = (err) => {
+                    console.error(err);
+                };
+
+                socket.onclose = () => {
+                    console.log("Connection closed");
+                };
+            };
+        </script>
+    </head>
+    <body onload="startWebsocket()"></body>
+</html>

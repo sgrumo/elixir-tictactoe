@@ -1,7 +1,10 @@
 defmodule Tictactoe.SocketRouter do
+  require Logger
   @behaviour :cowboy_websocket
 
   def init(req, _opts) do
+    IO.puts("Init Socket router")
+
     {
       :cowboy_websocket,
       req,
